@@ -1,8 +1,8 @@
 <?php
 //configuração do banco de dados
 $host ='localhost';
-$user = 'root';
-$database = 'ncm';
+$username = 'root';
+$dbname = 'ncm';
 $password = '';
 
 ?>

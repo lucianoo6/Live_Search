@@ -1,24 +1,21 @@
 <?php
-include 'config.php';
-$connect = mysqli_connect($host, $user, $password, $database);
-$output = '';
-if(isset($_POST["query"]))
-{
-	$search = mysqli_real_escape_string($connect, $_POST["query"]);
-	$query = "SELECT * FROM ncm_base 
-	WHERE descricao LIKE '%".$search."%'
-	OR codigo LIKE '%".$search."%'
+include_once 'config.php';
+try {
+	$connect = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+	
+} catch (PDOException $pe) {
+    die("Não foi possível se conectar ao banco de dados $dbname :" . $pe->getMessage());
+}
+$query = "SELECT * FROM ncm_base 
+	WHERE descricao LIKE :descricao
+	OR codigo LIKE :codigo
 	LIMIT 30
 	";
-
-$result = mysqli_query($connect, $query);
-if(mysqli_num_rows($result) > 0)
-{
-	while($row = mysqli_fetch_assoc($result))
-	{
-		$rows[] = $row;
-	}
-	echo json_encode($rows);
-}
-}
+	$q=$connect->prepare($query);
+	$q->bindValue(':descricao','%'.$_POST["query"].'%');
+	$q->bindValue(':codigo','%'.$_POST["query"].'%');
+	$q->execute();
+	$rows=$q->fetchAll(PDO::FETCH_ASSOC);
+	$json = json_encode($rows);
+	echo $json;
 ?>
