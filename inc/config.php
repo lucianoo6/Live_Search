@@ -3,5 +3,6 @@
 $host ='localhost';
 $user = 'root';
 $database = 'ncm';
+$password = '';
 
 ?>

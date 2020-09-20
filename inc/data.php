@@ -1,6 +1,6 @@
 <?php
 include 'config.php';
-$connect = mysqli_connect($host, $user, "", $database);
+$connect = mysqli_connect($host, $user, $password, $database);
 $output = '';
 if(isset($_POST["query"]))
 {
