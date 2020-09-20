@@ -25,7 +25,7 @@
          <div class="col-sm-6 col-md-6">
           <div class="p-2 bg-light rounded rounded-pill shadow-sm mb-4">
             <div class="input-group">
-              <input type="search" id="search" placeholder="Digite a Descrição ou NCM e Aperte [ENTER]" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+              <input type="search" id="search" placeholder="Digite a Descrição ou NCM" aria-describedby="button-addon1" class="form-control border-0 bg-light">
               <div class="input-group-append">
                 <button id="button" onclick="myFunction()" type="submit" class="btn btn-link text-primary" data-toggle="tooltip" data-placement="top" title="Copiar NCM"><i class="far fa-copy"></i></button>
               </div>              
