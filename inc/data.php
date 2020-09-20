@@ -1,5 +1,5 @@
 <?php
-include_once 'inc/config.php';
+include 'config.php';
 $connect = mysqli_connect($host, $user, "", $database);
 $output = '';
 if(isset($_POST["query"]))

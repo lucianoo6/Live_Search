@@ -11,6 +11,7 @@ $(document).ready(function(){
               {
           $('#result').html('');
           arr_ncms = $.parseJSON(data || "[]");
+          console.log(data);
           console.log(arr_ncms);
           $.each(arr_ncms, function (key, value) {
             $('#result').append('<li class="list-group-item link-class font-roboto">'+value.codigo+' | <span class="font-weight-bold">'+value.descricao+' </span> | <span class="text-muted">Federal: '+value.nacionalfederal+'</span>| <span class="text-muted">Estadual: '+value.estadual+'</span></li>'); 
