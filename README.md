@@ -1,4 +1,4 @@
-# Live Search com Banco de dados Mysql, Jquery, e Json. 
+# Live Search com Banco de dados Mysql, PHP, Jquery e Json. 
 
 Projeto pode ser modificado para outras finalidades
 ![ScreenShot
